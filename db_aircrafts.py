@@ -41,7 +41,7 @@ def home():
 
 @app.route('/db-aircrafts', methods=['GET'])
 def get_db_aircrafts():
-    aircrafts = AircraftData.query.order_by(AircraftData.recorded_at.desc()).limit(10).all()
+    aircrafts = AircraftData.query.order_by(AircraftData.recorded_at.desc()).limit(1000).all()
     data = [{
         'icao24': a.icao24,
         'callsign': a.callsign,
